@@ -16,10 +16,7 @@ app.use(express.json())
 
 
 //database
-mongoose.connect("mongodb+srv://ramadan:01556299599@cluster0.m9prvuj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }).then(()=>{
+mongoose.connect("mongodb+srv://ramadan:01556299599@cluster0.m9prvuj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("connected successfully");
 
 }).catch((error)=>{
