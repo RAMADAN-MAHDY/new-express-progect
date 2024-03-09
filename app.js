@@ -38,25 +38,25 @@ app.set('view engine', 'ejs');
 
 
 
-// app.get('/user',async(req,res)=>{
+app.get('/user',async(req,res)=>{
    
-//    try{
-//     const user = await usersfromDb.find();
-//     // res.json(user);
-//     res.render('index',{user : user} )
-//     return;
-//    }catch(err){
-//     console.error(err);
-//     res.status(500).send('Internal Server Error');
-//    }
-// })
+   try{
+    const user = await usersfromDb.find();
+    // res.json(user);
+    res.render('index',{user : user} )
+    return;
+   }catch(err){
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+   }
+})
 //pust
  app.post('/user',async(req,res)=>{
     console.log(req.body);
     try{
         const newUser = new usersfromDb(req.body);
         await newUser.save();
-        res.status(201).json(newUser);
+         res.status(201).json(newUser);
     return ; 
     }catch(err){
       console.error(err);
