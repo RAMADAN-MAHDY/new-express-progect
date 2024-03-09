@@ -38,21 +38,19 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('/',async(req,res)=>{
-   
-   try{
-    const user = await usersfromDb.find();
-    // res.json(user);
-    // res.render('index',{user : user} )
-    res.status(201).json(user)
-    return;
-   }catch(err){
-    console.error(err);
-    res.status(500).send('Internal Server Error');
-   }
-})
+// app.get('/',async(req,res)=>{
+//    try{
+//     const user = await usersfromDb.find();
+//     // res.render('index',{user : user} )
+//     res.status(201).json(user)
+//     return;
+//    }catch(err){
+//     console.error(err);
+//     res.status(500).send('Internal Server Error');
+//    }
+// })
 //pust
- app.post('/user',async(req,res)=>{
+ app.post('/',async(req,res)=>{
     console.log(req.body);
     try{
         const newUser = new usersfromDb(req.body);
