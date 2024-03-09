@@ -4,12 +4,13 @@ const usersfromDb = require("./models/user");
 const cors = require('cors');
 const app = express();
 app.use(cors());
+
 // Middleware للسماح بالوصول من مصدر محدد
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+//   });
   
 // my password in database is 01556299599  ; 
 // mongodb+srv://ramadan:<password>@cluster0.m9prvuj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
