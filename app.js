@@ -38,7 +38,7 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('/user',async(req,res)=>{
+app.get('/',async(req,res)=>{
    
    try{
     const user = await usersfromDb.find();
