@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 // Middleware للسماح بالوصول من مصدر محدد
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://new-express-progect.onrender.com');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
