@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const usersfromDb = require("./models/user");
+const cors = require('cors');
 const app = express();
+app.use(cors());
 // Middleware للسماح بالوصول من مصدر محدد
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -38,17 +40,17 @@ app.set('view engine', 'ejs');
 
 
 
-// app.get('/',async(req,res)=>{
-//    try{
-//     const user = await usersfromDb.find();
-//     // res.render('index',{user : user} )
-//     res.status(201).json(user)
-//     return;
-//    }catch(err){
-//     console.error(err);
-//     res.status(500).send('Internal Server Error');
-//    }
-// })
+app.get('/',async(req,res)=>{
+   try{
+    const user = await usersfromDb.find();
+    // res.render('index',{user : user} )
+    res.status(201).json(user)
+    return;
+   }catch(err){
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+   }
+})
 //pust
  app.post('/',async(req,res)=>{
     console.log(req.body);
