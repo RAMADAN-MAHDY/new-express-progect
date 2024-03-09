@@ -43,7 +43,8 @@ app.get('/',async(req,res)=>{
    try{
     const user = await usersfromDb.find();
     // res.json(user);
-    res.render('index',{user : user} )
+    // res.render('index',{user : user} )
+    res.status(201).json(user)
     return;
    }catch(err){
     console.error(err);
@@ -61,7 +62,6 @@ app.get('/',async(req,res)=>{
     }catch(err){
       console.error(err);
       res.status(400).send("internal server Error");
-      return;
     }
  })
 
