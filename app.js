@@ -4,7 +4,7 @@ const usersfromDb = require("./models/user");
 const app = express();
 // Middleware للسماح بالوصول من مصدر محدد
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://192.168.1.6:8080');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
