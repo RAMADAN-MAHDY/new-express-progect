@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "ms-vscode.vscode-speech-language-pack-de-de"
+        "myml.vscode-markdown-plantuml-preview",
+        "esbenp.prettier-vscode",
+        "jebbs.plantuml"
     ]
 }
