@@ -52,6 +52,7 @@ app.get('/',async(req,res)=>{
     res.status(500).send('Internal Server Error');
    }
 })
+
 //pust
  app.post('/',async(req,res)=>{
     console.log(req.body);
